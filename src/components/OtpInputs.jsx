@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
+import Button from "./Button";
 
 const inputs = new Array(1, 1, 1, 1, 1, 1);
 
-function OtpInputs({ otp, onSetOtp }) {
+function OtpInputs({ otp, onSetOtp, onReset }) {
    const items = [];
+
+   const [error, setError] = useState(null);
 
    for (let i = 0; i < 6; i++) {
       if (otp[i]) {
@@ -58,26 +61,67 @@ function OtpInputs({ otp, onSetOtp }) {
    const inputFocusHandler = function (e) {
       const { target } = e;
       target.setSelectionRange(0, 1);
+      setError(null);
    };
 
    return (
-      <div className="otp-inputs">
-         {items.map((digit, i) => (
-            <input
-               key={i}
-               type="text"
-               maxLength={6}
-               pattern="\d{1}"
-               autoComplete="one-time-code"
-               inputMode="numeric"
-               value={digit}
-               onChange={(e) => {
-                  inputHandler(e, i);
-               }}
-               onKeyDown={keyDownHandler}
-               onFocus={inputFocusHandler}
+      <div className="otp-container">
+         {error && <p className="error">{error}</p>}
+         <div className="otp-inputs">
+            {items.map((digit, i) => (
+               <input
+                  key={i}
+                  type="text"
+                  maxLength={6}
+                  pattern="\d{1}"
+                  autoComplete="one-time-code"
+                  inputMode="numeric"
+                  value={digit}
+                  onChange={(e) => {
+                     inputHandler(e, i);
+                  }}
+                  onKeyDown={keyDownHandler}
+                  onFocus={inputFocusHandler}
+                  required
+               />
+            ))}
+         </div>
+         <div className="btns">
+            <button>change number</button>
+            <button>re-send OTP</button>
+         </div>
+
+         <Button
+            onClick={() => {
+               console.log(otp.length, otp);
+               const filter =
+                  otp.length > 0 && otp.filter((digit) => digit !== "");
+
+               if (filter.length < 6 || otp.length <= 0) {
+                  setError("please fill that input fields");
+                  return;
+               }
+               onReset((prev) => !prev);
+               onSetOtp("");
+            }}
+         >
+            verify phone number
+         </Button>
+         <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="currentColor"
+            className="cancel"
+            onClick={() => onReset((prev) => !prev)}
+         >
+            <path
+               strokeLinecap="round"
+               strokeLinejoin="round"
+               d="M6 18L18 6M6 6l12 12"
             />
-         ))}
+         </svg>
       </div>
    );
 }

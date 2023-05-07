@@ -13,30 +13,45 @@ html {
 body {
    font-size: 1.6rem;
    font-family: "Nunito Sans", sans-serif;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 60vh;
 }
 
 .otp-input-container {
    text-align: center;
    margin: auto;
    margin-top: 10rem;
-   width: 450px;
+   position: relative;
 }
 
 h1 {
    font-size: 4rem;
    text-transform: capitalize;
    color: #716f6f;
+   margin-bottom: 8rem;
+}
+
+.password-reset {
+   text-align: center;
 }
 
 .otp-inputs {
-   display: flex;
    justify-content: space-evenly;
    gap: 2rem;
    margin: auto;
-   margin-top: 8rem;
+
+   display: flex;
    margin-bottom: 1rem;
    border-bottom: 1px solid #fac8ca;
 }
+
+.otp-container {
+   display: flex;
+   flex-direction: column;
+}
+
 .otp-inputs input {
    width: 4.8rem;
    height: 4.8rem;
@@ -79,15 +94,34 @@ h1 {
    cursor: pointer;
 }
 
-.verify-btn {
-   background-color: #f16b6f;
-   padding: 1.2rem 5rem;
-   border-radius: 5rem;
-   color: white;
-   font-weight: 500;
-}
-
 .btns button {
    background-color: transparent;
    color: #78bef8;
+   border-bottom: 2px solid transparent;
+}
+
+.btns button:hover {
+   border-bottom: 1px solid #78bef8;
+}
+.error {
+   margin-bottom: 2rem;
+   color: #f16b6f;
+   text-transform: lowercase;
+   letter-spacing: 1.2px;
+}
+
+.cancel {
+   width: 3rem;
+   height: 3rem;
+   position: absolute;
+   top: -2rem;
+   left: -10rem;
+   background-color: #eee;
+   border-radius: 50%;
+   color: #fff;
+}
+
+.cancel:hover {
+   cursor: pointer;
+   background-color: #f16b6f7c;
 }

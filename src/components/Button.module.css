@@ -1,0 +1,15 @@
+.verify-btn {
+   background-color: #f16b6f;
+   padding: 1.2rem 5rem;
+   border-radius: 5rem;
+   color: white;
+   font-weight: 600;
+   border: none;
+   outline: none;
+   font-size: 1.6rem;
+   align-self: center;
+}
+
+.verify-btn:hover {
+   background-color: #f67f83;
+}
