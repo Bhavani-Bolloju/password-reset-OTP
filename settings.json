@@ -1,0 +1,9 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.tabSize": 2,
+  "diffEditor.ignoreTrimWhiteSpace": false,
+  "diffEditor.renderSideBySide": true,
+  "file.autoSave": "afterDelay",
+  "editor.trimAutoWhitespace": true
+}

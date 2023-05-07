@@ -1,0 +1,93 @@
+*,
+*::after,
+*::before {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+html {
+   font-size: 62.5%;
+}
+
+body {
+   font-size: 1.6rem;
+   font-family: "Nunito Sans", sans-serif;
+}
+
+.otp-input-container {
+   text-align: center;
+   margin: auto;
+   margin-top: 10rem;
+   width: 450px;
+}
+
+h1 {
+   font-size: 4rem;
+   text-transform: capitalize;
+   color: #716f6f;
+}
+
+.otp-inputs {
+   display: flex;
+   justify-content: space-evenly;
+   gap: 2rem;
+   margin: auto;
+   margin-top: 8rem;
+   margin-bottom: 1rem;
+   border-bottom: 1px solid #fac8ca;
+}
+.otp-inputs input {
+   width: 4.8rem;
+   height: 4.8rem;
+   text-align: center;
+   display: inline-block;
+   font-weight: 700;
+   border: none;
+   border: 1px solid rgba(252, 205, 206, 0.587);
+   font-size: 1.8rem;
+   margin-bottom: 2rem;
+   font-family: inherit;
+   /* border-radius: 50%; */
+   caret-color: #ee4c51;
+   color: #ee4c51;
+   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.04);
+}
+.otp-inputs input::selection {
+   background-color: #acd9fd4d;
+   /* color: white; */
+}
+
+.otp-inputs input:focus {
+   outline: none;
+}
+
+.btns {
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: 4rem;
+}
+
+.otp-input-container button {
+   border: none;
+   font-family: inherit;
+   font-size: 1.6rem;
+   text-transform: capitalize;
+}
+
+.otp-input-container button:hover {
+   cursor: pointer;
+}
+
+.verify-btn {
+   background-color: #f16b6f;
+   padding: 1.2rem 5rem;
+   border-radius: 5rem;
+   color: white;
+   font-weight: 500;
+}
+
+.btns button {
+   background-color: transparent;
+   color: #78bef8;
+}
